@@ -1,5 +1,5 @@
 .. myopl-c++ documentation master file, created by
-   sphinx-quickstart on Fri Jan 28 16:34:15 2022.
+   sphinx-quickstart on Fri Jan 28 18:05:14 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
