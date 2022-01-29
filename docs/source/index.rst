@@ -10,6 +10,7 @@ Welcome to myopl-c++'s documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   usage/installation
 
 
 Indices and tables
