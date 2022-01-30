@@ -1,6 +1,11 @@
 #include "lexer.hpp"
-#include <vector>
+#include "token.hpp"
+#include "util.hpp"
+#include <optional>
 #include <string>
+#include <vector>
+
+using std::string, std::nullopt;
 
 Lexer::Lexer() {}
 Lexer::Lexer(string t) {
@@ -14,10 +19,36 @@ void Lexer::advance() {
         this->current_char = string(1, this->text[this->pos]);
         return;
     } else {
-        this->current_char = "";
+        this->current_char = nullopt;
     }
 }
 
-vector<string> Lexer::make_tokens(){
-    
+vector<Token> Lexer::make_tokens() {
+    vector<Token> tokens;
+
+    while (this->current_char != nullopt) {
+        if (elemInVec({" ", "\t"}, *this->current_char)) {
+            this->advance();
+        } else if (isDigitOrDot(*this->current_char)) {
+            tokens.push_back(this->make_number());
+        } else if (*this->current_char == "+") {
+            tokens.push_back(Token(TT_PLUS));
+            this->advance();
+        } else if (*this->current_char == "-") {
+            tokens.push_back(Token(TT_MINUS));
+            this->advance();
+        } else if (*this->current_char == "*") {
+            tokens.push_back(Token(TT_MUL));
+            this->advance();
+        } else if (*this->current_char == "/") {
+            tokens.push_back(Token(TT_DIV));
+            this->advance();
+        } else if (*this->current_char == "(") {
+            tokens.push_back(Token(TT_RPAREN));
+            this->advance();
+        } else if (*this->current_char == ")") {
+            tokens.push_back(Token(TT_LPAREN));
+            this->advance();
+        }
+    }
 }

@@ -5,6 +5,9 @@ project(
     HOMEPAGE_URL "https://mrlegohead0x45.github.io/myopl-cplusplus"
 )
 
+set(CMAKE_CXX_STANDARD 17) # so we can use std::optional
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
 file(GLOB sources "src/*.cpp")
 
 include_directories("include")
