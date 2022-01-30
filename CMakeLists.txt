@@ -8,7 +8,7 @@ project(
 file(GLOB sources "src/*.cpp")
 
 include_directories("include")
-add_executable(myopl-cplusplus ${sources})
+add_executable(myopl-cpp ${sources})
 
 find_package(fmt CONFIG REQUIRED)
-target_link_libraries(myopl-cplusplus PRIVATE fmt::fmt)
+target_link_libraries(myopl-cpp PRIVATE fmt::fmt)

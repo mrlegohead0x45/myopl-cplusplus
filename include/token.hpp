@@ -1,0 +1,41 @@
+#ifndef TOKEN_HPP_
+#define TOKEN_HPP_
+
+#include <string>
+
+using std::string;
+
+// the ': char' means it has a defined conversion to char
+// which will just be these values in ASCII
+enum TokenType : char {
+    TT_INT    = 0x49, // I
+    TT_FLOAT  = 0x46, // F
+    TT_PLUS   = 0x2b, // +
+    TT_MINUS  = 0x2d, // -
+    TT_MUL    = 0x2a, // *
+    TT_DIV    = 0x2f, // /
+    TT_RPAREN = 0x28, // (
+    TT_LPAREN = 0x29  // )
+};
+
+// convert TokenType to string
+string tokenTypeAsString(TokenType type);
+
+// class for token
+class Token {
+  public:
+    TokenType type;
+    string value;
+    double doubleValue = 0.0;
+    int intValue       = 0;
+
+    Token();
+    Token(TokenType t);
+    Token(TokenType t, string v);
+    Token(TokenType t, int i);
+    Token(TokenType t, double d);
+
+    string asString();
+};
+
+#endif // TOKEN_HPP_
