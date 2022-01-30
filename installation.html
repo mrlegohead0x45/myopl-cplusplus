@@ -36,26 +36,39 @@
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<span id="prerequisites-label"></span><h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Have <a class="reference external" href="https://vcpkg.io/en/getting-started.html">vcpkg</a> installed</p></li>
 <li><p>Have <a class="reference external" href="https://cmake.org/install">CMake</a> installed</p></li>
+<li><p>Have a C++ compiler</p></li>
 </ul>
 </section>
 <section id="compile">
 <h2>Compile<a class="headerlink" href="#compile" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Obtain the source code for this project from the
 <a class="reference external" href="https://github.com/mrlegohead0x45/myopl-cplusplus/releases">releases page</a>
 as the main branch is often a work in progress and may not even compile.
 Alternatively, if you want to help develop this project,
 see <a class="reference internal" href="development.html"><span class="doc">Development</span></a>, as help is always welcome</p></li>
-<li><p>Create a <code class="code docutils literal notranslate"><span class="pre">build</span></code> directory
-<code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">mkdir</span> <span class="pre">build;</span> <span class="pre">cd</span> <span class="pre">build</span></code></p></li>
-<li><p>Run CMake to generate build files, passing in the path to vcpkg
-<code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">cmake</span> <span class="pre">..</span> <span class="pre">-DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake</span></code></p></li>
-<li><p>Run those build files
-<code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span></code></p></li>
+<li><div class="line-block">
+<div class="line">Create a <code class="code docutils literal notranslate"><span class="pre">build</span></code> directory</div>
+<div class="line"><code class="code docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build;</span> <span class="pre">cd</span> <span class="pre">build</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Run CMake to generate build files, passing in the path to vcpkg</div>
+<div class="line"><code class="code docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span> <span class="pre">-DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake</span></code>.</div>
+<div class="line">If you are cross-compiling (i.e compiling with a compiler not native to your system),
+you may have to pass <code class="file docutils literal notranslate"><span class="pre">-DVCPKG_TARGET_TRIPLET=</span><em><span class="pre">triplet</span></em></code>,
+where <code class="code docutils literal notranslate"><span class="pre">triplet</span></code> is the <a class="reference internal" href="development.html#triplet-label"><span class="std std-ref">triplet</span></a> for your system</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Run those build files</div>
+<div class="line"><code class="code docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span></code></div>
+</div>
+</li>
 </ol>
 </section>
 </section>

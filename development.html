@@ -36,12 +36,21 @@
 <h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
 <p>If you want to help develop this project, great!</p>
 <p>Get started by downloading the latest source code from the GitHub
-<a class="reference external" href="https://github.com/mrlegohead0x45/myopl-cplusplus">repository</a>.</p>
+<a class="reference external" href="https://github.com/mrlegohead0x45/myopl-cplusplus">repository</a>.
+You should also meet the same <a class="reference internal" href="installation.html#prerequisites-label"><span class="std std-ref">Prerequisites</span></a> as for installation</p>
+<p>You may want to add <code class="file docutils literal notranslate"><span class="pre">build/vcpkg_installed/</span><em><span class="pre">triplet</span></em><span class="pre">/include</span></code> to your IDE’s include search path,
+as this is where installed header files will end up.
+<code class="code docutils literal notranslate"><span class="pre">triplet</span></code> should be your vcpkg target triplet (see <a class="reference internal" href="#triplet-label"><span class="std std-ref">Triplets</span></a>)</p>
 <p>If you think you have made an improvement, no matter how small, please submit your changes as a
 <a class="reference external" href="https://github.com/mrlegohead0x45/myopl-cplusplus/compare">pull request</a>.</p>
 <p>Please run <a class="reference external" href="https://clang.llvm.org/docs/ClangFormat.html">clang-format</a>
 with <code class="code docutils literal notranslate"><span class="pre">--style=file</span></code> (to specify the options in <code class="code docutils literal notranslate"><span class="pre">.clang-format</span></code>)
 on your code before you submit your pull request, however.</p>
+<section id="triplets">
+<span id="triplet-label"></span><h2>Triplets<a class="headerlink" href="#triplets" title="Permalink to this headline">¶</a></h2>
+<p>For example, on my machine with MinGW installed it is <code class="code docutils literal notranslate"><span class="pre">x64-mingw-dynamic</span></code>.
+If you were using Visual Studio on Windows it might be <code class="code docutils literal notranslate"><span class="pre">x64-windows</span></code>.</p>
+</section>
 </section>
 
 
@@ -64,7 +73,10 @@ on your code before you submit your pull request, however.</p>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Development</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#triplets">Triplets</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
