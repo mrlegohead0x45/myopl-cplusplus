@@ -19,6 +19,7 @@ class Lexer {
 
     void advance();
     vector<Token> make_tokens();
+    Token make_number();
 };
 
 #endif // LEXER_HPP_

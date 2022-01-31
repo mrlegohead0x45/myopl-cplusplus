@@ -6,9 +6,9 @@
 
 using std::vector;
 
-template <typename T> bool elemInVec(vector<T> vec, T elem);
+template <typename T> bool elem_in_vec(vector<T> vec, T elem);
 
-bool isDigitOrDot(int c);
-bool isDigitOrDot(string c);
+bool is_digit_or_dot(int c);
+bool is_digit_or_dot(string c);
 
 #endif // UTIL_HPP_

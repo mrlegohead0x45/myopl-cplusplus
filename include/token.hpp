@@ -1,9 +1,10 @@
 #ifndef TOKEN_HPP_
 #define TOKEN_HPP_
 
+#include <optional>
 #include <string>
 
-using std::string;
+using std::string, std::optional;
 
 // the ': char' means it has a defined conversion to char
 // which will just be these values in ASCII
@@ -19,15 +20,15 @@ enum TokenType : char {
 };
 
 // convert TokenType to string
-string tokenTypeAsString(TokenType type);
+string token_type_as_string(TokenType type);
 
 // class for token
 class Token {
   public:
     TokenType type;
-    string value;
-    double doubleValue = 0.0;
-    int intValue       = 0;
+    optional<string> value;
+    optional<double> double_value;
+    optional<int> int_value;
 
     Token();
     Token(TokenType t);

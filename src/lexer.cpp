@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-using std::string, std::nullopt;
+using std::string, std::nullopt, std::vector;
 
 Lexer::Lexer() {}
 Lexer::Lexer(string t) {
@@ -27,9 +27,9 @@ vector<Token> Lexer::make_tokens() {
     vector<Token> tokens;
 
     while (this->current_char != nullopt) {
-        if (elemInVec({" ", "\t"}, *this->current_char)) {
+        if (*this->current_char == " " || *this->current_char == "\t") {
             this->advance();
-        } else if (isDigitOrDot(*this->current_char)) {
+        } else if (is_digit_or_dot(*this->current_char)) {
             tokens.push_back(this->make_number());
         } else if (*this->current_char == "+") {
             tokens.push_back(Token(TT_PLUS));
