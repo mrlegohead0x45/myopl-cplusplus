@@ -42,7 +42,7 @@ Token::Token(TokenType t, double d) {
     double_value = d;
 }
 
-string Token::asString() {
+string Token::as_string() {
     if (this->type == TT_INT) {
         return fmt::format("INT: {0:d}", *this->int_value);
     } else if (this->type == TT_FLOAT) {
