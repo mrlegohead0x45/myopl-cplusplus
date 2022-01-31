@@ -23,6 +23,31 @@ void Lexer::advance() {
     }
 }
 
+Token Lexer::make_number() {
+    string num_str;
+    int dot_count = 0;
+
+    while (this->current_char != nullopt &&
+           is_digit_or_dot(*this->current_char)) {
+        if (*this->current_char == ".") {
+            if (dot_count == 1) {
+                break;
+            }
+            dot_count++;
+            num_str += ".";
+
+        } else {
+            num_str += *this->current_char;
+        }
+    };
+
+    if (dot_count == 0) {
+        return Token(TT_INT, std::stoi(num_str));
+    } else {
+        return Token(TT_FLOAT, std::stod(num_str));
+    }
+}
+
 vector<Token> Lexer::make_tokens() {
     vector<Token> tokens;
 
@@ -49,6 +74,8 @@ vector<Token> Lexer::make_tokens() {
         } else if (*this->current_char == ")") {
             tokens.push_back(Token(TT_LPAREN));
             this->advance();
+        } else {
+            // return an error
         }
     }
 }
