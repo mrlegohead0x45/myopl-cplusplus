@@ -1,0 +1,2 @@
+language = "cpp"
+run = "chmod +x replit.sh; ./replit.sh"

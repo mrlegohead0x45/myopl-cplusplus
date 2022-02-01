@@ -39,3 +39,4 @@
 *.bat   text eol=crlf
 
 *       text=auto
+.replit linguist-language=toml
