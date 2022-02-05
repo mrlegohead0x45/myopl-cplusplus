@@ -3,9 +3,8 @@
 #include "util.hpp"
 #include <optional>
 #include <string>
-#include <vector>
 
-using std::string, std::nullopt, std::vector;
+using std::string, std::nullopt;
 
 Lexer::Lexer() {}
 Lexer::Lexer(string t) {
@@ -39,6 +38,7 @@ Token Lexer::make_number() {
         } else {
             num_str += *this->current_char;
         }
+        this->advance();
     };
 
     if (dot_count == 0) {
@@ -48,34 +48,39 @@ Token Lexer::make_number() {
     }
 }
 
-vector<Token> Lexer::make_tokens() {
-    vector<Token> tokens;
+LexResult Lexer::make_tokens() {
+    LexResult result;
 
     while (this->current_char != nullopt) {
         if (*this->current_char == " " || *this->current_char == "\t") {
             this->advance();
         } else if (is_digit_or_dot(*this->current_char)) {
-            tokens.push_back(this->make_number());
+            result.tokens.push_back(this->make_number());
         } else if (*this->current_char == "+") {
-            tokens.push_back(Token(TT_PLUS));
+            result.tokens.push_back(Token(TT_PLUS));
             this->advance();
         } else if (*this->current_char == "-") {
-            tokens.push_back(Token(TT_MINUS));
+            result.tokens.push_back(Token(TT_MINUS));
             this->advance();
         } else if (*this->current_char == "*") {
-            tokens.push_back(Token(TT_MUL));
+            result.tokens.push_back(Token(TT_MUL));
             this->advance();
         } else if (*this->current_char == "/") {
-            tokens.push_back(Token(TT_DIV));
+            result.tokens.push_back(Token(TT_DIV));
             this->advance();
         } else if (*this->current_char == "(") {
-            tokens.push_back(Token(TT_RPAREN));
+            result.tokens.push_back(Token(TT_LPAREN));
             this->advance();
         } else if (*this->current_char == ")") {
-            tokens.push_back(Token(TT_LPAREN));
+            result.tokens.push_back(Token(TT_RPAREN));
             this->advance();
         } else {
-            // return an error
+            string character(*this->current_char);
+            this->advance();
+
+            return {.tokens = {}, .error = IllegalCharError(quote(character))};
         }
     }
+
+    return result;
 }

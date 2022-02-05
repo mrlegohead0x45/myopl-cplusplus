@@ -17,6 +17,3 @@ string Error::as_string() {
 // call parent contsructor
 IllegalCharError::IllegalCharError() : Error() {}
 IllegalCharError::IllegalCharError(string d) : Error("Illegal Character", d){};
-// string IllegalCharError::as_string() {
-//     return fmt::format("");
-// }

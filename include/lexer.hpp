@@ -1,12 +1,17 @@
 #ifndef LEXER_HPP_
 #define LEXER_HPP_
 
+#include "error.hpp"
 #include "token.hpp"
 #include <optional>
 #include <string>
-#include <vector>
 
-using std::string, std::vector, std::optional;
+using std::string, std::optional;
+
+struct LexResult {
+    vector<Token> tokens;
+    optional<Error> error;
+};
 
 class Lexer {
   public:
@@ -18,7 +23,7 @@ class Lexer {
     Lexer(string t);
 
     void advance();
-    vector<Token> make_tokens();
+    LexResult make_tokens();
     Token make_number();
 };
 

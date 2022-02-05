@@ -4,7 +4,7 @@
 
 using std::vector, std::string;
 
-template <typename T> bool elemInVec(vector<T> vec, T elem) {
+template <typename T> bool elem_in_vec(T elem, vector<T> vec) {
     return std::find(vec.begin(), vec.end(), elem) != vec.end();
 }
 
@@ -15,4 +15,8 @@ bool is_digit_or_dot(int c) {
 
 bool is_digit_or_dot(string c) {
     return is_digit_or_dot(c[0]);
+}
+
+string quote(string str){
+    return "'" + str + "'";
 }

@@ -1,9 +1,8 @@
 #include "token.hpp"
 #include <fmt/core.h>
-#include <optional>
 #include <string>
 
-using std::string, std::optional;
+using std::string;
 
 string token_type_as_string(TokenType type) {
     string t(1, (char)type);
