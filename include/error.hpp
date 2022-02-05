@@ -13,15 +13,13 @@ class Error {
     Error();
     Error(string n, string d);
 
-    virtual string as_string();
+    virtual string as_string() const;
 };
 
 class IllegalCharError: public Error {
   public:
     IllegalCharError();
     IllegalCharError(string details);
-
-    // string as_string();
 };
 
 #endif // ERROR_HPP_

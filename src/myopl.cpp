@@ -1,5 +1,6 @@
 #include "lexer.hpp"
 #include "token.hpp"
+#include "format.hpp"
 #include <fmt/ranges.h>
 #include <iostream>
 #include <string>
@@ -20,11 +21,9 @@ int main(int argc, char **argv) {
         if (error) {
             cout << (*error).as_string() << "\n";
         } else {
-            vector<string> tokens_as_strings;
-            for (Token t : tokens) {
-                tokens_as_strings.push_back(t.as_string());
-            }
-            fmt::print("{}\n", tokens_as_strings);
+            // we can use fmt::print as we defined a formatter for Token in format.hpp
+            // it also prints vectors nicely
+            fmt::print("{}\n", tokens);
         }
     }
     return 0;

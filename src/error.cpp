@@ -10,7 +10,7 @@ Error::Error(string n, string d) {
     name    = n;
     details = d;
 }
-string Error::as_string() {
+string Error::as_string() const {
     return fmt::format("{0:s}: {1:s}", this->name, this->details);
 }
 

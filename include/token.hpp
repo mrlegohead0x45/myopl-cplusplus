@@ -36,7 +36,7 @@ class Token {
     Token(TokenType t, int i);
     Token(TokenType t, double d);
 
-    string as_string();
+    string as_string() const;
 };
 
 #endif // TOKEN_HPP_

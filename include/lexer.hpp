@@ -5,8 +5,9 @@
 #include "token.hpp"
 #include <optional>
 #include <string>
+#include <vector>
 
-using std::string, std::optional;
+using std::string, std::optional, std::vector;
 
 struct LexResult {
     vector<Token> tokens;

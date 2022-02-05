@@ -41,7 +41,7 @@ Token::Token(TokenType t, double d) {
     double_value = d;
 }
 
-string Token::as_string() {
+string Token::as_string() const {
     if (this->type == TT_INT) {
         return fmt::format("INT: {0:d}", *this->int_value);
     } else if (this->type == TT_FLOAT) {
