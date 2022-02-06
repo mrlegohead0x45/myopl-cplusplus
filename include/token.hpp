@@ -6,17 +6,16 @@
 
 using std::string, std::optional;
 
-// the ': char' means it has a defined conversion to char
-// which will just be these values in ASCII
+// the ': char' (underlying type char) means it has a defined conversion to char
 enum TokenType : char {
-    TT_INT    = 0x49, // I
-    TT_FLOAT  = 0x46, // F
-    TT_PLUS   = 0x2b, // +
-    TT_MINUS  = 0x2d, // -
-    TT_MUL    = 0x2a, // *
-    TT_DIV    = 0x2f, // /
-    TT_RPAREN = 0x28, // (
-    TT_LPAREN = 0x29  // )
+    TT_INT    = 'I',
+    TT_FLOAT  = 'F',
+    TT_PLUS   = '+',
+    TT_MINUS  = '-',
+    TT_MUL    = '*',
+    TT_DIV    = '/',
+    TT_RPAREN = '(',
+    TT_LPAREN = ')'
 };
 
 // convert TokenType to string
