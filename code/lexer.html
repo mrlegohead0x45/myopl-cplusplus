@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lexer &#8212; myopl-c++  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Token" href="token.html" />
+    <link rel="prev" title="Code" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="lexer">
+<h1>Lexer<a class="headerlink" href="#lexer" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">Declared in file <code class="code docutils literal notranslate"><span class="pre">include/lexer.hpp</span></code></div>
+<div class="line">Implemented in file <code class="code docutils literal notranslate"><span class="pre">src/lexer.cpp</span></code></div>
+</div>
+<p>These files contain stuff related to lexing input into <a class="reference internal" href="token.html#_CPPv45Token" title="Token"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Token</span></code></a></p>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv49LexResult">
+<span id="_CPPv39LexResult"></span><span id="_CPPv29LexResult"></span><span id="LexResult"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LexResult</span></span></span><a class="headerlink" href="#_CPPv49LexResult" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N9LexResult6tokensE">
+<span id="_CPPv3N9LexResult6tokensE"></span><span id="_CPPv2N9LexResult6tokensE"></span><span id="LexResult::tokens__std::vector:Token:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="token.html#_CPPv45Token" title="Token"><span class="n"><span class="pre">Token</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tokens</span></span></span><a class="headerlink" href="#_CPPv4N9LexResult6tokensE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A vector of <a class="reference internal" href="token.html#_CPPv45Token" title="Token"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Token</span></code></a> representing the lexed tokens.
+It will be empty if an error was returned</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N9LexResult5errorE">
+<span id="_CPPv3N9LexResult5errorE"></span><span id="_CPPv2N9LexResult5errorE"></span><span id="LexResult::error__std::optional:Error:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="error.html#_CPPv45Error" title="Error"><span class="n"><span class="pre">Error</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><a class="headerlink" href="#_CPPv4N9LexResult5errorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A <code class="code docutils literal notranslate"><span class="pre">std::optional&lt;Error&gt;</span></code> that represents the error that was returned if there was one.
+If there wasn’t it will be <code class="code docutils literal notranslate"><span class="pre">std::nullopt</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv45Lexer">
+<span id="_CPPv35Lexer"></span><span id="_CPPv25Lexer"></span><span id="Lexer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Lexer</span></span></span><a class="headerlink" href="#_CPPv45Lexer" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A class that handles lexing input into <a class="reference internal" href="token.html#_CPPv45Token" title="Token"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Token</span></code></a></p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Lexer5LexerENSt6stringE">
+<span id="_CPPv3N5Lexer5LexerENSt6stringE"></span><span id="_CPPv2N5Lexer5LexerENSt6stringE"></span><span id="Lexer::Lexer__ss"></span><span class="sig-name descname"><span class="n"><span class="pre">Lexer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Lexer5LexerENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialise this <a class="reference internal" href="#_CPPv45Lexer" title="Lexer"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Lexer</span></code></a> with <code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">text</span></code> as <a class="reference internal" href="#_CPPv4N5Lexer5LexerENSt6stringE" title="Lexer::Lexer::t"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">t</span></code></a></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Lexer7advanceEv">
+<span id="_CPPv3N5Lexer7advanceEv"></span><span id="_CPPv2N5Lexer7advanceEv"></span><span id="Lexer::advance"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">advance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Lexer7advanceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Advance this <a class="reference internal" href="#_CPPv45Lexer" title="Lexer"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Lexer</span></code></a> by incrementing <a class="reference internal" href="#_CPPv4N5Lexer3posE" title="Lexer::pos"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">pos</span></code></a> and setting
+<a class="reference internal" href="#_CPPv4N5Lexer12current_charE" title="Lexer::current_char"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">current_char</span></code></a> accordingly</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Lexer11make_numberEv">
+<span id="_CPPv3N5Lexer11make_numberEv"></span><span id="_CPPv2N5Lexer11make_numberEv"></span><span id="Lexer::make_number"></span><a class="reference internal" href="token.html#_CPPv45Token" title="Token"><span class="n"><span class="pre">Token</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">make_number</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Lexer11make_numberEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a <a class="reference internal" href="token.html#_CPPv45Token" title="Token"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Token</span></code></a> of a number at the current position</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Lexer11make_tokensEv">
+<span id="_CPPv3N5Lexer11make_tokensEv"></span><span id="_CPPv2N5Lexer11make_tokensEv"></span><span id="Lexer::make_tokens"></span><a class="reference internal" href="#_CPPv49LexResult" title="LexResult"><span class="n"><span class="pre">LexResult</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">make_tokens</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Lexer11make_tokensEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Lex <a class="reference internal" href="#_CPPv4N5Lexer4textE" title="Lexer::text"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">text</span></code></a> into a <a class="reference internal" href="#_CPPv49LexResult" title="LexResult"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">LexResult</span></code></a> and return it</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N5Lexer4textE">
+<span id="_CPPv3N5Lexer4textE"></span><span id="_CPPv2N5Lexer4textE"></span><span id="Lexer::text__ss"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">text</span></span></span><a class="headerlink" href="#_CPPv4N5Lexer4textE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The text to lex into <a class="reference internal" href="token.html#_CPPv45Token" title="Token"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Token</span></code></a></p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N5Lexer3posE">
+<span id="_CPPv3N5Lexer3posE"></span><span id="_CPPv2N5Lexer3posE"></span><span id="Lexer::pos__i"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pos</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N5Lexer3posE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The current position of this <a class="reference internal" href="#_CPPv45Lexer" title="Lexer"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Lexer</span></code></a></p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N5Lexer12current_charE">
+<span id="_CPPv3N5Lexer12current_charE"></span><span id="_CPPv2N5Lexer12current_charE"></span><span id="Lexer::current_char__std::optional:ss:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">current_char</span></span></span><a class="headerlink" href="#_CPPv4N5Lexer12current_charE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The character we are currently lexing.
+It will be <code class="code docutils literal notranslate"><span class="pre">std::nullopt</span></code> if we reached the end of <a class="reference internal" href="#_CPPv4N5Lexer4textE" title="Lexer::text"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">text</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">myopl-c++</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Code</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lexer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="token.html">Token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="util.html">Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Code</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Code</a></li>
+      <li>Next: <a href="token.html" title="next chapter">Token</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, mrlegohead0x45.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/code/lexer.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

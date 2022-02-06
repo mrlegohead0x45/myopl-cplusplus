@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Token &#8212; myopl-c++  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Error" href="error.html" />
+    <link rel="prev" title="Lexer" href="lexer.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="token">
+<h1>Token<a class="headerlink" href="#token" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">Declared in file <code class="code docutils literal notranslate"><span class="pre">include/token.hpp</span></code></div>
+<div class="line">Implemented in file <code class="code docutils literal notranslate"><span class="pre">src/token.cpp</span></code></div>
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv45Token">
+<span id="_CPPv35Token"></span><span id="_CPPv25Token"></span><span id="Token"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Token</span></span></span><a class="headerlink" href="#_CPPv45Token" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Token5TokenE9TokenType">
+<span id="_CPPv3N5Token5TokenE9TokenType"></span><span id="_CPPv2N5Token5TokenE9TokenType"></span><span id="Token::Token__TokenType"></span><span class="sig-name descname"><span class="n"><span class="pre">Token</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49TokenType" title="TokenType"><span class="n"><span class="pre">TokenType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Token5TokenE9TokenType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialise an empty token with type <code class="code docutils literal notranslate"><span class="pre">t</span></code></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Token5TokenE9TokenTypei">
+<span id="_CPPv3N5Token5TokenE9TokenTypei"></span><span id="_CPPv2N5Token5TokenE9TokenTypei"></span><span id="Token::Token__TokenType.i"></span><span class="sig-name descname"><span class="n"><span class="pre">Token</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49TokenType" title="TokenType"><span class="n"><span class="pre">TokenType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Token5TokenE9TokenTypei" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialise a token with <a class="reference internal" href="#_CPPv4N5Token4typeE" title="Token::type"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">type</span></code></a> t and <a class="reference internal" href="#_CPPv4N5Token9int_valueE" title="Token::int_value"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">int_value</span></code></a> i</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Token5TokenE9TokenTyped">
+<span id="_CPPv3N5Token5TokenE9TokenTyped"></span><span id="_CPPv2N5Token5TokenE9TokenTyped"></span><span id="Token::Token__TokenType.double"></span><span class="sig-name descname"><span class="n"><span class="pre">Token</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49TokenType" title="TokenType"><span class="n"><span class="pre">TokenType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">d</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Token5TokenE9TokenTyped" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialise a token with <a class="reference internal" href="#_CPPv4N5Token4typeE" title="Token::type"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">type</span></code></a> t and <a class="reference internal" href="#_CPPv4N5Token12double_valueE" title="Token::double_value"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">double_value</span></code></a> d</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Token9as_stringEv">
+<span id="_CPPv3NK5Token9as_stringEv"></span><span id="_CPPv2NK5Token9as_stringEv"></span><span id="Token::as_stringC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">as_string</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Token9as_stringEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Return a representation of this <a class="reference internal" href="#_CPPv45Token" title="Token"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Token</span></code></a> as a <code class="code docutils literal notranslate"><span class="pre">std::string</span></code></p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N5Token4typeE">
+<span id="_CPPv3N5Token4typeE"></span><span id="_CPPv2N5Token4typeE"></span><span id="Token::type__TokenType"></span><a class="reference internal" href="#_CPPv49TokenType" title="TokenType"><span class="n"><span class="pre">TokenType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><a class="headerlink" href="#_CPPv4N5Token4typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The type of the token</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N5Token9int_valueE">
+<span id="_CPPv3N5Token9int_valueE"></span><span id="_CPPv2N5Token9int_valueE"></span><span id="Token::int_value__std::optional:i:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">int_value</span></span></span><a class="headerlink" href="#_CPPv4N5Token9int_valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The value of the token as an <code class="code docutils literal notranslate"><span class="pre">int</span></code> if there is one</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N5Token12double_valueE">
+<span id="_CPPv3N5Token12double_valueE"></span><span id="_CPPv2N5Token12double_valueE"></span><span id="Token::double_value__std::optional:double:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">double_value</span></span></span><a class="headerlink" href="#_CPPv4N5Token12double_valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The value of the token as a <code class="code docutils literal notranslate"><span class="pre">double</span></code> if there is one</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv49TokenType">
+<span id="_CPPv39TokenType"></span><span id="_CPPv29TokenType"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TokenType</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><a class="headerlink" href="#_CPPv49TokenType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TokenType6TT_INTE">
+<span id="_CPPv3N9TokenType6TT_INTE"></span><span id="_CPPv2N9TokenType6TT_INTE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TT_INT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="sc"><span class="pre">'I'</span></span><a class="headerlink" href="#_CPPv4N9TokenType6TT_INTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TokenType8TT_FLOATE">
+<span id="_CPPv3N9TokenType8TT_FLOATE"></span><span id="_CPPv2N9TokenType8TT_FLOATE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TT_FLOAT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="sc"><span class="pre">'F'</span></span><a class="headerlink" href="#_CPPv4N9TokenType8TT_FLOATE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TokenType7TT_PLUSE">
+<span id="_CPPv3N9TokenType7TT_PLUSE"></span><span id="_CPPv2N9TokenType7TT_PLUSE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TT_PLUS</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="sc"><span class="pre">'+'</span></span><a class="headerlink" href="#_CPPv4N9TokenType7TT_PLUSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TokenType8TT_MINUSE">
+<span id="_CPPv3N9TokenType8TT_MINUSE"></span><span id="_CPPv2N9TokenType8TT_MINUSE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TT_MINUS</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="sc"><span class="pre">'-'</span></span><a class="headerlink" href="#_CPPv4N9TokenType8TT_MINUSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TokenType6TT_MULE">
+<span id="_CPPv3N9TokenType6TT_MULE"></span><span id="_CPPv2N9TokenType6TT_MULE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TT_MUL</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="sc"><span class="pre">'*'</span></span><a class="headerlink" href="#_CPPv4N9TokenType6TT_MULE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TokenType9TT_RPARENE">
+<span id="_CPPv3N9TokenType9TT_RPARENE"></span><span id="_CPPv2N9TokenType9TT_RPARENE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TT_RPAREN</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="sc"><span class="pre">'('</span></span><a class="headerlink" href="#_CPPv4N9TokenType9TT_RPARENE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TokenType6TT_DIVE">
+<span id="_CPPv3N9TokenType6TT_DIVE"></span><span id="_CPPv2N9TokenType6TT_DIVE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TT_DIV</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="sc"><span class="pre">'/'</span></span><a class="headerlink" href="#_CPPv4N9TokenType6TT_DIVE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TokenType9TT_LPARENE">
+<span id="_CPPv3N9TokenType9TT_LPARENE"></span><span id="_CPPv2N9TokenType9TT_LPARENE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TT_LPAREN</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="sc"><span class="pre">')'</span></span><a class="headerlink" href="#_CPPv4N9TokenType9TT_LPARENE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420token_type_as_string9TokenType">
+<span id="_CPPv320token_type_as_string9TokenType"></span><span id="_CPPv220token_type_as_string9TokenType"></span><span id="token_type_as_string__TokenType"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">token_type_as_string</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49TokenType" title="TokenType"><span class="n"><span class="pre">TokenType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420token_type_as_string9TokenType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert a <a class="reference internal" href="#_CPPv49TokenType" title="TokenType"><code class="xref cpp cpp-enum docutils literal notranslate"><span class="pre">TokenType</span></code></a> to <code class="code docutils literal notranslate"><span class="pre">std::string</span></code></p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">myopl-c++</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Code</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lexer.html">Lexer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error.html">Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="util.html">Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Code</a><ul>
+      <li>Previous: <a href="lexer.html" title="previous chapter">Lexer</a></li>
+      <li>Next: <a href="error.html" title="next chapter">Error</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, mrlegohead0x45.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/code/token.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

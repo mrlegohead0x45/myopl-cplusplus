@@ -12,6 +12,7 @@ Welcome to myopl-c++'s documentation!
 
    installation
    development
+   code/index
 
 
 Indices and tables
