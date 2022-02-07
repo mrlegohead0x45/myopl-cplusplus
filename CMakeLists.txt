@@ -10,8 +10,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 file(GLOB sources "src/*.cpp")
 
-include_directories("include")
 add_executable(myopl-cpp ${sources})
+target_include_directories(myopl-cpp PRIVATE "include")
+
+# add compile options for warnings
+target_compile_options(
+    myopl-cpp
+    PRIVATE
+    $<$<CXX_COMPILER_ID:Clang,GNU,AppleClang>:
+        -Wall -Werror -Wextra>
+    $<$<CXX_COMPILER_ID:MSVC>:
+        /WX /W4>
+)
 
 find_package(fmt CONFIG REQUIRED)
 target_link_libraries(myopl-cpp PRIVATE fmt::fmt)
