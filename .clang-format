@@ -3,3 +3,4 @@ IndentWidth: 4
 SpaceBeforeInheritanceColon: false
 AlignConsecutiveAssignments: Consecutive
 AllowShortCaseLabelsOnASingleLine: true
+IndentCaseLabels: true

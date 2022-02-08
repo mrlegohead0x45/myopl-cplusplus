@@ -15,6 +15,10 @@ int main() {
         cout << "myopl> ";
         getline(cin, in);
 
+        if (cin.eof()){
+            exit(0);
+        }
+
         Lexer lexer(in);
         auto [tokens, error] = lexer.make_tokens(); // structured binding
 
