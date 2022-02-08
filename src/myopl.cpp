@@ -8,7 +8,7 @@
 
 using std::string, std::cout, std::cin, std::getline, std::vector;
 
-int main(int argc, char **argv) {
+int main() {
     string in;
 
     while (true) {

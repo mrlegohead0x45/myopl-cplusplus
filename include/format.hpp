@@ -18,14 +18,14 @@ template <> struct fmt::formatter<Token>: formatter<fmt::string_view> {
     template <typename FormatContext>
     auto format(const Token t, FormatContext &ctx) -> decltype(ctx.out()) {
         return fmt::formatter<fmt::string_view>::format(t.as_string(), ctx);
-    };
+    }
 };
 
 template <> struct fmt::formatter<Error>: formatter<fmt::string_view> {
     template <typename FormatContext>
     auto format(const Error e, FormatContext &ctx) -> decltype(ctx.out()) {
         return fmt::formatter<fmt::string_view>::format(e.as_string(), ctx);
-    };
+    }
 };
 
 #endif // FORMAT_HPP_

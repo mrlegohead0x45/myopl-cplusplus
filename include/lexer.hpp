@@ -3,6 +3,7 @@
 
 #include "error.hpp"
 #include "token.hpp"
+#include <cstddef>
 #include <optional>
 #include <string>
 #include <vector>
@@ -17,7 +18,7 @@ struct LexResult {
 class Lexer {
   public:
     string text;
-    int pos = -1;
+    std::size_t pos = -1;
     optional<string> current_char;
 
     Lexer();
