@@ -16,4 +16,4 @@ string Error::as_string() const {
 
 // call parent contsructor
 IllegalCharError::IllegalCharError() : Error() {}
-IllegalCharError::IllegalCharError(string d) : Error("Illegal Character", d){};
+IllegalCharError::IllegalCharError(string d) : Error("Illegal Character", d) {}

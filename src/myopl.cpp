@@ -1,6 +1,6 @@
+#include "format.hpp"
 #include "lexer.hpp"
 #include "token.hpp"
-#include "format.hpp"
 #include <fmt/ranges.h>
 #include <iostream>
 #include <string>
@@ -15,7 +15,7 @@ int main() {
         cout << "myopl> ";
         getline(cin, in);
 
-        if (cin.eof()){
+        if (cin.eof()) {
             exit(0);
         }
 
@@ -23,7 +23,7 @@ int main() {
         auto [tokens, error] = lexer.make_tokens(); // structured binding
 
         if (error) {
-            cout << (*error).as_string() << "\n";
+            cout << error->as_string() << "\n";
         } else {
             // we can use fmt::print as we defined a formatter for Token in format.hpp
             // it also prints vectors nicely

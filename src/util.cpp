@@ -13,10 +13,6 @@ bool is_digit_or_dot(int c) {
     return ((47 < c) && (c < 58)) || (c == 46);
 };
 
-bool is_digit_or_dot(string c) {
-    return is_digit_or_dot(c[0]);
-}
+bool is_digit_or_dot(string c) { return is_digit_or_dot(c[0]); }
 
-string quote(string str){
-    return "'" + str + "'";
-}
+string quote(string str) { return "'" + str + "'"; }

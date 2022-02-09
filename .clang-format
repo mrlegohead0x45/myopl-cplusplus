@@ -4,3 +4,4 @@ SpaceBeforeInheritanceColon: false
 AlignConsecutiveAssignments: Consecutive
 AllowShortCaseLabelsOnASingleLine: true
 IndentCaseLabels: true
+ReflowComments: false

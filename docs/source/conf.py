@@ -52,4 +52,22 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+
+# add last built time and git hash
+import subprocess
+
+try:
+    git_hash = subprocess.check_output(
+        # github's commit hashes are 7 long
+        ["git", "rev-parse", "--short=7", "--verify", "HEAD"],
+        encoding="utf8"
+    ).strip()
+    git_hash = f", commit {git_hash}"
+
+except subprocess.CalledProcessError:
+    git_hash = ""
+
+html_last_updated_fmt = f"Last built %H:%M %d/%m/%Y{git_hash}"
+
+
 primary_domain = "cpp"
