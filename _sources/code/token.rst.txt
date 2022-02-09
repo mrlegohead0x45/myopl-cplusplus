@@ -35,16 +35,16 @@ Token
 
       The value of the token as a :code:`double` if there is one
 
-.. enum:: TokenType : char
+.. enum:: TokenType
 
-   .. enumerator:: TT_INT    = 'I'
-   .. enumerator:: TT_FLOAT  = 'F'
-   .. enumerator:: TT_PLUS   = '+'
-   .. enumerator:: TT_MINUS  = '-'
-   .. enumerator:: TT_MUL    = '*'
-   .. enumerator:: TT_RPAREN = '('
-   .. enumerator:: TT_DIV    = '/'
-   .. enumerator:: TT_LPAREN = ')'
+   .. enumerator:: TT_INT
+   .. enumerator:: TT_FLOAT
+   .. enumerator:: TT_PLUS
+   .. enumerator:: TT_MINUS
+   .. enumerator:: TT_MUL
+   .. enumerator:: TT_RPAREN
+   .. enumerator:: TT_DIV
+   .. enumerator:: TT_LPARE
 
 
 .. function:: std::string token_type_as_string(TokenType type)
