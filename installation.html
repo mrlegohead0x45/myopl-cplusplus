@@ -15,7 +15,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Development" href="development.html" />
+    <link rel="next" title="Contribute" href="contributing.html" />
     <link rel="prev" title="Welcome to myopl-c++’s documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -35,42 +35,13 @@
             
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<section id="prerequisites">
-<span id="prerequisites-label"></span><h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Have <a class="reference external" href="https://vcpkg.io/en/getting-started.html">vcpkg</a> installed</p></li>
-<li><p>Have <a class="reference external" href="https://cmake.org/install">CMake</a> installed</p></li>
-<li><p>Have a C++ compiler</p></li>
-</ul>
-</section>
-<section id="compile">
-<h2>Compile<a class="headerlink" href="#compile" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p>Obtain the source code for this project from the
+<p>Download the version for your OS from the
 <a class="reference external" href="https://github.com/mrlegohead0x45/myopl-cplusplus/releases">releases page</a>
-as the main branch is often a work in progress and may not even compile.
-Alternatively, if you want to help develop this project,
-see <a class="reference internal" href="development.html"><span class="doc">Development</span></a>, as help is always welcome</p></li>
-<li><div class="line-block">
-<div class="line">Create a <code class="code docutils literal notranslate"><span class="pre">build</span></code> directory</div>
-<div class="line"><code class="code docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build;</span> <span class="pre">cd</span> <span class="pre">build</span></code></div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">Run CMake to generate build files, passing in the path to vcpkg</div>
-<div class="line"><code class="code docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span> <span class="pre">-DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake</span></code>.</div>
-<div class="line">If you are cross-compiling (i.e compiling with a compiler not native to your system),
-you may have to pass <code class="file docutils literal notranslate"><span class="pre">-DVCPKG_TARGET_TRIPLET=</span><em><span class="pre">triplet</span></em></code>,
-where <code class="code docutils literal notranslate"><span class="pre">triplet</span></code> is the <a class="reference internal" href="development.html#triplet-label"><span class="std std-ref">triplet</span></a> for your system</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">Run those build files</div>
-<div class="line"><code class="code docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span></code></div>
-</div>
-</li>
-</ol>
-</section>
+and extract it.
+If you want to build from the source, download the source code from the same page
+and follow the <a class="reference internal" href="contributing.html#compiling-label"><span class="std std-ref">compiling instructions</span></a>
+Alternatively, if you want to contribute to this project,
+see <a class="reference internal" href="contributing.html"><span class="doc">Contribute</span></a>, as help is always welcome</p>
 </section>
 
 
@@ -92,12 +63,8 @@ where <code class="code docutils literal notranslate"><span class="pre">triplet<
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#compile">Compile</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code/index.html">Code</a></li>
 </ul>
 
@@ -106,7 +73,7 @@ where <code class="code docutils literal notranslate"><span class="pre">triplet<
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Welcome to myopl-c++’s documentation!</a></li>
-      <li>Next: <a href="development.html" title="next chapter">Development</a></li>
+      <li>Next: <a href="contributing.html" title="next chapter">Contribute</a></li>
   </ul></li>
 </ul>
 </div>
@@ -136,7 +103,7 @@ where <code class="code docutils literal notranslate"><span class="pre">triplet<
     &copy;2022, mrlegohead0x45. |
     Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a> |
     <a href="_sources/index.rst.txt" rel="nofollow">Page source</a> |
-    Last built 19:19 09/02/2022, commit e12e749
+    Last built 15:40 13/02/2022, commit d2cbd2b
 </div>
 
   </body>

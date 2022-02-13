@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Contribute &#8212; myopl-c++  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code" href="code/index.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="contribute">
+<h1>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h1>
+<p>If you want to contribute to this project, great!
+We would really appreciate your contribution</p>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>Get started by creating a fork of the GitHub
+<a class="reference external" href="https://github.com/mrlegohead0x45/myopl-cplusplus">repository</a>
+and cloning it locally, preferably with the <code class="code docutils literal notranslate"><span class="pre">--recurse-submodules</span></code> flag
+to download vcpkg, which enables you to skip the <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span></code> commands lower down.</p>
+<section id="advice">
+<h3>Advice<a class="headerlink" href="#advice" title="Permalink to this headline">¶</a></h3>
+<p>You may want to add <code class="file docutils literal notranslate"><span class="pre">build/vcpkg_installed/</span><em><span class="pre">triplet</span></em><span class="pre">/include</span></code> and <code class="code docutils literal notranslate"><span class="pre">include</span></code>
+to your IDE’s include search path,
+as this is where installed header files and our headers are respectively.
+<code class="code docutils literal notranslate"><span class="pre">triplet</span></code> should be your vcpkg target triplet (see <a class="reference internal" href="#triplet-label"><span class="std std-ref">Triplets</span></a>).
+Or you could just look.</p>
+<p>For example in my <code class="code docutils literal notranslate"><span class="pre">.vscode/c_cpp_properties.json</span></code> I have</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;configurations&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+             <span class="p">...</span>
+            <span class="s2">&quot;includePath&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="s2">&quot;${default}&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;${workspaceFolder}/include&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;${workspaceFolder}/build/vcpkg_installed/x64-mingw-dynamic/include&quot;</span>
+            <span class="p">]</span>
+            <span class="p">...</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="submitting-your-changes">
+<h3>Submitting your changes<a class="headerlink" href="#submitting-your-changes" title="Permalink to this headline">¶</a></h3>
+<p>If you think you have made an improvement, no matter how small, please submit your changes as a
+<a class="reference external" href="https://github.com/mrlegohead0x45/myopl-cplusplus/compare">pull request</a>.</p>
+<p>Please run <a class="reference external" href="https://clang.llvm.org/docs/ClangFormat.html">clang-format</a>
+on your code before you submit your pull request, like so <code class="file docutils literal notranslate"><span class="pre">$</span> <span class="pre">clang-format</span> <span class="pre">-i</span> <span class="pre">--style=file</span> <em><span class="pre">changed</span> <span class="pre">files</span></em></code>.
+Please also make sure your code compiles, following the <a class="reference internal" href="#compiling-label"><span class="std std-ref">Compiling</span></a> instructions.</p>
+</section>
+</section>
+<section id="compiling">
+<span id="compiling-label"></span><h2>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">¶</a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Have <a class="reference external" href="https://cmake.org">CMake</a></p></li>
+<li><p>Have <a class="reference external" href="https://git-scm.com">Git</a></p></li>
+<li><p>Have a C++ compiler</p></li>
+</ol>
+<p>Any text that starts with a <code class="code docutils literal notranslate"><span class="pre">$</span></code> should be run from the command line
+(without the <code class="code docutils literal notranslate"><span class="pre">$</span></code>)</p>
+</section>
+<section id="vcpkg">
+<h3>vcpkg<a class="headerlink" href="#vcpkg" title="Permalink to this headline">¶</a></h3>
+<p>You will need to run <code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">init</span></code> and <code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">update</span></code>
+in order to download vcpkg. Then run <code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">./vcpkg/bootstrap-vcpkg.sh</span></code>
+(or <code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">.\vcpkg\bootstrap-vcpkg.bat</span></code> on Windows) to set it up.</p>
+</section>
+<section id="id1">
+<h3>Compiling<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Run CMake to generate build files (known as configuring),
+specifying <code class="file docutils literal notranslate"><span class="pre">-DVCPKG_TARGET_TRIPLET=</span><em><span class="pre">triplet</span></em></code>
+if necessary (see <a class="reference internal" href="#triplet-label"><span class="std std-ref">Triplets</span></a>)
+and <code class="file docutils literal notranslate"><span class="pre">-G</span> <em><span class="pre">generator</span></em></code> as well if necessary (see
+<a class="reference external" href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html">CMake generators</a>)</div>
+<div class="line"><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">cmake</span> <span class="pre">-B</span> <span class="pre">build</span> <span class="pre">-S</span> <span class="pre">.</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">Then you can run those build files to actually compile the code</div>
+<div class="line"><code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">build</span></code></div>
+<div class="line">You might want to pass the <code class="file docutils literal notranslate"><span class="pre">-j</span> <em><span class="pre">jobs</span></em></code> flag to speed up the build
+by running multiple processes. To find a suitable value, on Linux you can run <code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">nproc</span></code>
+in a terminal. On Windows, you can go to
+Start &gt; Task Manager &gt; More details &gt; Performance &gt; CPU &gt; Logical processors.</div>
+</div>
+</section>
+</section>
+<section id="triplets">
+<span id="triplet-label"></span><h2>Triplets<a class="headerlink" href="#triplets" title="Permalink to this headline">¶</a></h2>
+<p>If you are cross-compiling (compiling with a compiler that is not native to your system),
+you may need to specify the target triplet.
+For example, on my machine with MinGW installed I need to pass
+<code class="code docutils literal notranslate"><span class="pre">-DVCPKG_TARGET_TRIPLET=x64-mingw-dynamic</span></code> to CMake which tells vcpkg to build the
+dependencies for use with MinGW.</p>
+</section>
+<section id="docs">
+<h2>Docs<a class="headerlink" href="#docs" title="Permalink to this headline">¶</a></h2>
+<p>If your changes include modifying the documentation, you will want to build the docs
+to check that they do actually build and that the build looks how you intended it to.
+To do this you will need <a class="reference external" href="https://python.org">Python</a> and <a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a>.
+To build the docs, <code class="code docutils literal notranslate"><span class="pre">cd</span></code> to the <code class="code docutils literal notranslate"><span class="pre">docs</span></code> directory and on Windows run
+<code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">.\make.bat</span> <span class="pre">html</span></code> and on *nix run <code class="code docutils literal notranslate"><span class="pre">$</span> <span class="pre">make</span> <span class="pre">html</span></code>, which will build the docs and place
+them in <code class="code docutils literal notranslate"><span class="pre">docs/build/html</span></code> with <code class="code docutils literal notranslate"><span class="pre">index.html</span></code> as the homepage.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">myopl-c++</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compiling">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#triplets">Triplets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docs">Docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code/index.html">Code</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="code/index.html" title="next chapter">Code</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<div class="footer">
+    &copy;2022, mrlegohead0x45. |
+    Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a> |
+    <a href="_sources/index.rst.txt" rel="nofollow">Page source</a> |
+    Last built 15:40 13/02/2022, commit d2cbd2b
+</div>
+
+  </body>
+</html>

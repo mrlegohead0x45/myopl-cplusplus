@@ -1,3 +1,4 @@
 # The built program
 build/
 .vscode/
+vcpkg/

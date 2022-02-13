@@ -44,7 +44,7 @@ Token
    .. enumerator:: TT_MUL
    .. enumerator:: TT_RPAREN
    .. enumerator:: TT_DIV
-   .. enumerator:: TT_LPARE
+   .. enumerator:: TT_LPAREN
 
 
 .. function:: std::string token_type_as_string(TokenType type)

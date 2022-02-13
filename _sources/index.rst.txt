@@ -11,7 +11,7 @@ Welcome to myopl-c++'s documentation!
    :caption: Contents:
 
    installation
-   development
+   contributing
    code/index
 
 
@@ -19,5 +19,4 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
