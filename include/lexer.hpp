@@ -6,6 +6,7 @@
 #include <optional>
 #include <string>
 #include <vector>
+#include "position.hpp"
 
 using std::string, std::optional, std::vector;
 
@@ -17,7 +18,7 @@ struct LexResult {
 class Lexer {
   public:
     string text;
-    string::size_type pos = -1;
+    Position pos = Position({.idx = -1, .ln = 0, .col = -1});
     optional<string> current_char;
 
     Lexer();

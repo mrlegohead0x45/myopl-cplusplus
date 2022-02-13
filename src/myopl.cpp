@@ -16,7 +16,7 @@ int main() {
         getline(cin, in);
 
         if (cin.eof()) {
-            exit(0);
+            return 0;
         }
 
         Lexer lexer(in);
