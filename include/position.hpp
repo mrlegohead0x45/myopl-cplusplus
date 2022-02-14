@@ -4,18 +4,19 @@
 #include <string>
 
 using std::string;
+using size_t = string::size_type;
 
 struct PositionArgs {
-    int idx = 0;
-    int ln  = 0;
-    int col = 0;
+    size_t idx = 0;
+    size_t ln  = 0;
+    size_t col = 0;
 };
 
 class Position {
   public:
-    int idx;
-    int ln;
-    int col;
+    size_t idx;
+    size_t ln;
+    size_t col;
 
     Position();
     Position(PositionArgs args);

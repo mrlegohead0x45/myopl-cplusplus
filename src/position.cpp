@@ -2,6 +2,8 @@
 
 #include <string>
 
+using std::string;
+
 Position::Position() {}
 Position::Position(PositionArgs args) {
     idx = args.idx;

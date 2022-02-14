@@ -1,4 +1,5 @@
 #include "lexer.hpp"
+#include "position.hpp"
 #include "token.hpp"
 #include "util.hpp"
 #include <optional>
@@ -13,9 +14,9 @@ Lexer::Lexer(string t) {
 }
 
 void Lexer::advance() {
-    this->pos.advance();
+    this->pos.advance(*this->current_char);
     if (this->pos.idx < this->text.length()) {
-        this->current_char = string(1, this->text[this->pos]);
+        this->current_char = string(1, this->text[this->pos.idx]);
         return;
     } else {
         this->current_char = nullopt;
@@ -75,10 +76,13 @@ LexResult Lexer::make_tokens() {
             result.tokens.push_back(Token(TT_RPAREN));
             this->advance();
         } else {
+            Position pos_start = this->pos.copy();
             string character(*this->current_char);
             this->advance();
 
-            return {.tokens = {}, .error = IllegalCharError(quote(character))};
+            return {.tokens = {},
+                    .error  = IllegalCharError(quote(character), pos_start,
+                                               this->pos)};
         }
     }
 

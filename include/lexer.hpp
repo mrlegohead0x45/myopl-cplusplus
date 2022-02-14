@@ -18,7 +18,7 @@ struct LexResult {
 class Lexer {
   public:
     string text;
-    Position pos = Position({.idx = -1, .ln = 0, .col = -1});
+    Position pos = Position({.idx = -1ull, .ln = 0ull, .col = -1ull});
     optional<string> current_char;
 
     Lexer();
