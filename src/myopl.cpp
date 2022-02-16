@@ -6,14 +6,18 @@
 #include <string>
 #include <vector>
 
+#include "loguru.hpp"
+
 using std::string, std::cout, std::cin, std::getline, std::vector;
 
 int main() {
+    loguru::add_file("myopl.log", loguru::Append, loguru::Verbosity_MAX);
     string in;
 
     while (true) {
         cout << "myopl> ";
         getline(cin, in);
+        LOG_F(INFO, "Read input");
 
         if (cin.eof()) {
             return 0;

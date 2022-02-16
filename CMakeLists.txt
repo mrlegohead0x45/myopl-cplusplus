@@ -8,11 +8,19 @@ project(
     HOMEPAGE_URL "https://mrlegohead0x45.github.io/myopl-cplusplus"
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # so we can use designated initialisers
 # (e.g see lexer.cpp:81, the return in the else)
 # see https://en.cppreference.com/w/cpp/language/aggregate_initialization#Designated_initializers
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+option(
+    LOGURU_HEADER_ONLY
+    "Whether to use loguru as header only"
+    OFF
+)
 
 file(GLOB sources "src/*.cpp")
 
@@ -32,5 +40,14 @@ target_compile_options(
 find_package(fmt CONFIG REQUIRED)
 target_link_libraries(myopl-cpp PRIVATE fmt::fmt)
 
-find_path(LOGURU_INCLUDE_DIRS "loguru/loguru.cpp")
-target_include_directories(myopl-cpp PRIVATE ${LOGURU_INCLUDE_DIRS})
+# if we are using loguru as header only
+if(LOGURU_HEADER_ONLY)
+    # find and add loguru.[ch]pp to the include path
+    find_path(LOGURU_INCLUDE_DIRS "loguru/loguru.cpp")
+    target_include_directories(myopl-cpp PRIVATE ${LOGURU_INCLUDE_DIRS})
+    target_compile_definitions(myopl-cpp PRIVATE LOGURU_HEADER_ONLY)
+else()
+    # else this will add it to the include path and link the library
+    find_package(loguru CONFIG REQUIRED)
+    target_link_libraries(myopl-cpp PRIVATE loguru)
+endif()

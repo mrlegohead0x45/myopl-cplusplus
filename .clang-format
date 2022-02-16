@@ -5,3 +5,4 @@ AlignConsecutiveAssignments: Consecutive
 AllowShortCaseLabelsOnASingleLine: true
 IndentCaseLabels: true
 ReflowComments: false
+IndentPPDirectives: AfterHash
