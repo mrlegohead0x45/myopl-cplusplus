@@ -49,5 +49,7 @@ if(LOGURU_HEADER_ONLY)
 else()
     # else this will add it to the include path and link the library
     find_package(loguru CONFIG REQUIRED)
+    # I thought this would link loguru against fmt but it fails :(
+    target_link_libraries(loguru PUBLIC fmt::fmt)
     target_link_libraries(myopl-cpp PRIVATE loguru)
 endif()
