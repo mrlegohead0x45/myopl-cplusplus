@@ -8,6 +8,7 @@
     "homepage": "https://github.com/mrlegohead0x45/myopl-cplusplus",
     "documentation": "https://mrlegohead.github.io/myopl-cplusplus",
     "dependencies": [
-        "fmt"
+        "fmt",
+        "loguru"
     ]
 }

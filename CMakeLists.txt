@@ -31,3 +31,6 @@ target_compile_options(
 
 find_package(fmt CONFIG REQUIRED)
 target_link_libraries(myopl-cpp PRIVATE fmt::fmt)
+
+find_path(LOGURU_INCLUDE_DIRS "loguru/loguru.cpp")
+target_include_directories(myopl-cpp PRIVATE ${LOGURU_INCLUDE_DIRS})
